@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlaEddine Derbel — Embedded Systems Engineer</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div id="loader">
+  <div class="loader-content">
+    <div class="loader-logo">Ala<span>Eddine.</span></div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar" id="loaderBar"></div>
+    </div>
+    <div class="loader-percent" id="loaderPercent">0%</div>
+    <div class="loader-status" id="loaderStatus">Initializing...</div>
+  </div>
+</div>
+
+<!-- ============ NAVBAR ============ -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">Ala<span>Eddine.</span></div>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li class="cta"><a href="#contact">Contact</a></li>
+    </ul>
+
+    <button class="hamburger" onclick="toggleMenu()" id="hamBtn">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="closeMenu()">Home</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#skills" onclick="closeMenu()">Skills</a>
+  <a href="#experience" onclick="closeMenu()">Experience</a>
+  <a href="#projects" onclick="closeMenu()">Projects</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section id="home">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Available for opportunities
+      </div>
+      <h1 class="hero-title">
+        Hi, I'm
+        <span class="name">AlaEddine</span>
+        Derbel
+      </h1>
+      <p class="hero-role">
+        <span id="typewriter">Embedded Systems Engineer</span>
+      </p>
+      <p class="hero-desc">
+        Embedded systems engineer specialized in embedded software development in C/C++ on microcontrollers and embedded Linux. Building efficient, real-time, and scalable solutions.
+      </p>
+
+      <div class="hero-actions">
+
+        <!-- CV Dropdown Button -->
+        <div class="cv-dropdown-wrap" id="cvDropdownWrap">
+          <button class="btn-primary cv-btn" onclick="toggleCvDropdown(event)">
+            <i class="fa-solid fa-download"></i> Download CV
+            <i class="fa-solid fa-chevron-down cv-chevron" id="cvChevron"></i>
+          </button>
+          <div class="cv-dropdown" id="cvDropdown">
+            <a href="cv/AlaEddine_Derbel_CV.pdf" download class="cv-option">
+              <div class="cv-option-icon"><i class="fa-solid fa-user"></i></div>
+              <div>
+                <div class="cv-option-title">With Photo</div>
+                <div class="cv-option-desc">Classic layout with profile picture</div>
+              </div>
+            </a>
+            <div class="cv-divider"></div>
+            <a href="cv/CV_AlaEddine_Derbel.pdf" download class="cv-option">
+              <div class="cv-option-icon"><i class="fa-solid fa-file-lines"></i></div>
+              <div>
+                <div class="cv-option-title">Without Photo</div>
+                <div class="cv-option-desc">Clean minimal layout, ATS-friendly</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn-outline">
+          <i class="fa-solid fa-paper-plane"></i> Get in Touch
+        </a>
+      </div>
+
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/ala-eddine-derbel-a78624273/" title="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/Alaeddinederbel" title="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="#" title="Facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="#" title="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image-wrap">
+      <div class="hero-image-ring">
+        <img src="images/cyan.png" alt="AlaEddine Derbel">
+        <div class="hero-float-tag t1"><i class="fa-solid fa-microchip"></i> STM32 / ESP32</div>
+        <div class="hero-float-tag t2"><i class="fa-brands fa-linux"></i> Embedded Systems</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-row fade-in">
+    <div class="stat-item">
+      <span class="stat-num">1</span>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">4+</span>
+      <div class="stat-label">Projects Built</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">3</span>
+      <div class="stat-label">Internships</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="about-inner">
+
+    <div class="about-left fade-in">
+      <span class="section-label">// about me</span>
+      <h2 class="section-title">About <span>Me</span></h2>
+      <h3 class="about-sub">Embedded Systems <span>Engineer</span></h3>
+      <p class="about-text">
+        Embedded Systems Engineer with hands-on experience in firmware development, RTOS, and microcontroller-based systems (STM32, ESP32). Skilled in C/C++ and communication protocols (UART, I2C, SPI, CAN). Passionate about building reliable, efficient, and scalable industrial and IoT solutions.
+      </p>
+
+      <div class="about-facts">
+        <div class="about-fact">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Sousse, Tunisia</span>
+        </div>
+        <div class="about-fact">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>ENISo - 2025</span>
+        </div>
+        <div class="about-fact">
+          <i class="fa-solid fa-language"></i>
+          <span>Arabic · French · English</span>
+        </div>
+        <div class="about-fact">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Available for hire</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-right fade-in">
+      <div class="about-edu-header">
+        <span class="section-label">// education</span>
+      </div>
+
+      <div class="about-edu-list">
+
+        <div class="about-edu-item">
+          <div class="about-edu-dot"></div>
+          <div class="about-edu-body">
+            <div class="about-edu-date">2022 - 2025</div>
+            <div class="about-edu-title">National School of Engineers of Sousse</div>
+            <div class="about-edu-degree">Diploma of Industrial Electronics Engineering</div>
+            <div class="about-edu-place"><i class="fa-solid fa-map-pin"></i> Sousse</div>
+          </div>
+        </div>
+
+        <div class="about-edu-item">
+          <div class="about-edu-dot"></div>
+          <div class="about-edu-body">
+            <div class="about-edu-date">2020 - 2022</div>
+            <div class="about-edu-title">Preparatory Classes for Engineering</div>
+            <div class="about-edu-degree">Diploma of Pre-Engineer - Technology Path</div>
+            <div class="about-edu-place"><i class="fa-solid fa-map-pin"></i> Monastir</div>
+          </div>
+        </div>
+
+        <div class="about-edu-item">
+          <div class="about-edu-dot"></div>
+          <div class="about-edu-body">
+            <div class="about-edu-date">2020</div>
+            <div class="about-edu-title">Bachelor of Technology</div>
+            <div class="about-edu-degree">Science & Technology</div>
+            <div class="about-edu-place"><i class="fa-solid fa-map-pin"></i> Lycée Zaouia, Ksiba & Thrayet</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills">
+  <div class="skills-inner">
+    <div class="skills-header fade-in">
+      <span class="section-label">// technical skills</span>
+      <h2 class="section-title">My <span>Skills</span></h2>
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="skill-card fade-in">
+        <div class="skill-icon-wrap"><i class="fa-solid fa-code"></i></div>
+        <h3>Programming Languages</h3>
+        <p>Writing clean, efficient, low-level code for embedded targets</p>
+        <div class="skill-tags">
+          <span class="tag">C</span>
+          <span class="tag">C++</span>
+          <span class="tag">Python</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-in">
+        <div class="skill-icon-wrap"><i class="fa-solid fa-microchip"></i></div>
+        <h3>Microcontrollers</h3>
+        <p>Bare metal and HAL-based development across multiple platforms</p>
+        <div class="skill-tags">
+          <span class="tag">STM32</span>
+          <span class="tag">ESP32</span>
+          <span class="tag">PIC18F</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-in">
+        <div class="skill-icon-wrap"><i class="fa-solid fa-desktop"></i></div>
+        <h3>Operating Systems</h3>
+        <p>RTOS and embedded Linux for real-time and complex applications</p>
+        <div class="skill-tags">
+          <span class="tag">FreeRTOS</span>
+          <span class="tag">Embedded Linux</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-in">
+        <div class="skill-icon-wrap"><i class="fa-solid fa-network-wired"></i></div>
+        <h3>Communication Protocols</h3>
+        <p>Full-stack communication from hardware peripherals to networking</p>
+        <div class="skill-tags">
+          <span class="tag">UART</span>
+          <span class="tag">I2C</span>
+          <span class="tag">SPI</span>
+          <span class="tag">CAN</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-in">
+        <div class="skill-icon-wrap"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        <h3>Tools</h3>
+        <p>Modern toolchains and version control for professional workflows</p>
+        <div class="skill-tags">
+          <span class="tag">STM32CubeIDE</span>
+          <span class="tag">VS Code</span>
+          <span class="tag">Git</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-in">
+        <div class="skill-icon-wrap"><i class="fa-solid fa-server"></i></div>
+        <h3>Hardware</h3>
+        <p>Hands-on hardware design, testing, and low-level debugging on real boards</p>
+        <div class="skill-tags">
+          <span class="tag">PCB Design</span>
+          <span class="tag">Oscilloscope</span>
+          <span class="tag">Debugging</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-in">
+        <div class="skill-icon-wrap"><i class="fa-solid fa-lightbulb"></i></div>
+        <h3>Soft Skills</h3>
+        <p>Professional attributes that drive quality and team success</p>
+        <div class="skill-tags">
+          <span class="tag">Problem-solving</span>
+          <span class="tag">Autonomous</span>
+          <span class="tag">Rigorous</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience">
+  <div class="exp-inner">
+    <div class="exp-header fade-in">
+      <span class="section-label">// career journey</span>
+      <h2 class="section-title">Professional <span>Experience</span></h2>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <div>
+              <h3>Graduation Internship</h3>
+              <span class="timeline-company">LATIS Laboratory, ENISo</span>
+              <a href="https://github.com/Alaeddinederbel/visual-slam-ros2"
+                 target="_blank" class="proj-gh-link" title="View on GitHub"
+                 style="margin-top:0.4rem;">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+            <span class="timeline-date">Feb 2025 — Jun 2025</span>
+          </div>
+          <ul>
+            <li>Developed an autonomous navigation system on Embedded Linux (ROS2) with real-time perception, mapping, and obstacle detection</li>
+            <li>Integrated ORB-SLAM3, RTAB-Map, and Nav2 for SLAM-based navigation and path planning</li>
+            <li>Optimized system performance using multithreading and ROS2 architecture, achieving real-time execution (&lt;100 ms latency, 30 FPS)</li>
+          </ul>
+          <div class="timeline-tech">
+            <span class="tag">C++</span>
+            <span class="tag">Python</span>
+            <span class="tag">ROS2</span>
+            <span class="tag">CMake</span>
+            <span class="tag">Visual SLAM</span>
+            <span class="tag">Embedded Linux</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <div>
+              <h3>Embedded Systems Intern</h3>
+              <span class="timeline-company">LEONI Wiring Systems Tunisia</span>
+            </div>
+            <span class="timeline-date">Jul 2024</span>
+          </div>
+          <ul>
+            <li>Designed a distributed fault detection system using ESP32 nodes for cable harness testing</li>
+            <li>Implemented ESP-NOW communication with ping-ACK protocol for fast fault localization</li>
+            <li>Developed a .NET monitoring dashboard for real-time fault visualization and alerts</li>
+            <li>Built a logging system classifying faults as machine or operator-related based on recurring patterns</li>
+          </ul>
+          <div class="timeline-tech">
+            <span class="tag">C/C++</span>
+            <span class="tag">ESP32</span>
+            <span class="tag">.NET C#</span>
+            <span class="tag">UART</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <div>
+              <h3>Embedded Hardware Intern</h3>
+              <span class="timeline-company">SEA Electronics Tunisia</span>
+            </div>
+            <span class="timeline-date">Jun 2023</span>
+          </div>
+          <ul>
+            <li>Gained hands-on experience in electronics debugging, repair, and embedded hardware testing</li>
+            <li>Designed and tested a PCB-based stepper motor control system</li>
+            <li>Used laboratory tools (oscilloscope, debugging tools) for signal analysis and troubleshooting</li>
+          </ul>
+          <div class="timeline-tech">
+            <span class="tag">PCB Design</span>
+            <span class="tag">Industrial Testing</span>
+            <span class="tag">Electronics</span>
+            <span class="tag">Altium</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="proj-inner">
+    <div class="proj-header fade-in">
+      <span class="section-label">// what I've built</span>
+      <h2 class="section-title">Personal <span>Projects</span></h2>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card fade-in">
+        <div class="proj-card-top">
+          <span class="proj-num">CAN BUS + STM32</span>
+          <a href="https://github.com/Alaeddinederbel/CAN_Dashboard"
+             target="_blank" class="proj-gh-link" title="View on GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+        <h3>CAN Dashboard — STM32 Multi-ECU System</h3>
+        <p>Three simulated ECUs communicate over a shared CAN bus on an STM32F429ZIT6. A dashboard receiver decodes and displays real-time vehicle data over UART. Includes a Python software simulation — byte-for-byte compatible with the C firmware — that validates the full protocol on any PC without hardware.</p>
+        <div class="proj-pipeline">
+          <span>ECUx3</span><span class="arr">→</span><span>CAN Bus</span><span class="arr">→</span><span>Dashboard</span><span class="arr">→</span><span>UART</span>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">STM32F429</span>
+          <span class="tag">CAN Bus</span>
+          <span class="tag">C/C++</span>
+          <span class="tag">Python Simulation</span>
+          <span class="tag">UART</span>
+        </div>
+      </div>
+
+      <div class="project-card fade-in">
+        <div class="proj-card-top">
+          <span class="proj-num">OTA + IoT</span>
+          <a href="https://github.com/Alaeddinederbel/OTA-Firmware-Update-System-ESP32-ESP8266-"
+             target="_blank" class="proj-gh-link" title="View on GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+        <h3>OTA Firmware Update System — ESP32 + ESP8266</h3>
+        <p>Production-grade Over-The-Air firmware update system for IoT devices. The ESP32 acts as trigger master — it sends a single HTTP request to wake the ESP8266, which autonomously downloads a new firmware binary from a local server, flashes itself, and reboots. No cables. No manual visits. Just push and reboot.</p>
+        <div class="proj-pipeline">
+          <span>ESP32 trigger</span><span class="arr">→</span><span>HTTP</span><span class="arr">→</span><span>ESP8266</span><span class="arr">→</span><span>Flash &amp; Reboot</span>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">ESP32</span>
+          <span class="tag">ESP8266</span>
+          <span class="tag">OTA</span>
+          <span class="tag">Wi-Fi / HTTP</span>
+          <span class="tag">C/C++</span>
+        </div>
+      </div>
+
+      <div class="project-card fade-in">
+        <div class="proj-card-top">
+          <span class="proj-num">VISION + ML</span>
+          <a href="" target="_blank" class="proj-gh-link" title="View on GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+        <h3>ESP32-CAM Person Detection &amp; Tracking</h3>
+        <p>Real-time person detection and servo tracking on a single ESP32-CAM chip. OV2640 captures frames, TFLite inference detects persons, a PID controller drives an SG90 servo to track movement, and telemetry is streamed live via MQTT over Wi-Fi to a dashboard.</p>
+        <div class="proj-pipeline">
+          <span>OV2640</span><span class="arr">→</span><span>TFLite</span><span class="arr">→</span><span>PID</span><span class="arr">→</span><span>SG90</span>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">ESP32-CAM</span>
+          <span class="tag">MQTT</span>
+          <span class="tag">PID Controller</span>
+          <span class="tag">C++</span>
+        </div>
+      </div>
+
+      <div class="project-card fade-in">
+        <div class="proj-card-top">
+          <span class="proj-num">SECURITY + PIC18F</span>
+          <a href="" target="_blank" class="proj-gh-link" title="View on GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+        <h3>Secure Digital Lock System (PIC18F)</h3>
+        <p>Embedded access control system on a PIC18F microcontroller with PIN authentication and a keypad-based user interface. Features secure code verification, lockout after failed attempts, LCD status feedback, and relay-driven lock actuation.</p>
+        <div class="proj-pipeline">
+          <span>Keypad</span><span class="arr">→</span><span>PIC18F</span><span class="arr">→</span><span>Auth</span><span class="arr">→</span><span>Relay</span>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">PIC18F</span>
+          <span class="tag">C</span>
+          <span class="tag">Keypad</span>
+          <span class="tag">LCD</span>
+          <span class="tag">Access Control</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="contact-inner">
+
+    <div class="contact-header fade-in">
+      <span class="section-label">// get in touch</span>
+      <h2 class="section-title">Let's <span>Connect</span></h2>
+      <p>Looking for collaborations or just want to talk embedded systems? My inbox is always open.</p>
+    </div>
+
+    <div class="contact-top fade-in">
+
+      <div class="contact-info">
+        <a href="mailto:derbel176@gmail.com" class="contact-card">
+          <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <div class="contact-card-label">Email</div>
+            <div class="contact-card-value">derbel176@gmail.com</div>
+          </div>
+        </a>
+        <a href="https://github.com/Alaeddinederbel" target="_blank" class="contact-card">
+          <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+          <div>
+            <div class="contact-card-label">GitHub</div>
+            <div class="contact-card-value">Alaeddinederbel</div>
+          </div>
+        </a>
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <div class="contact-card-label">Location</div>
+            <div class="contact-card-value">Sousse, Tunisia</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+          <div>
+            <div class="contact-card-label">Timezone</div>
+            <div class="contact-card-value">UTC+1</div>
+          </div>
+        </div>
+
+        <div class="contact-socials">
+          <span class="section-label" style="margin-bottom:0.75rem;">// Connect With Me</span>
+          <div class="contact-social-btns">
+            <a href="https://github.com/Alaeddinederbel" target="_blank" class="contact-social-btn">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/ala-eddine-derbel-a78624273/" target="_blank" class="contact-social-btn">
+              <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="terminal-wrap">
+        <div class="terminal-bar">
+          <div class="terminal-dots">
+            <span class="tdot red"></span>
+            <span class="tdot yellow"></span>
+            <span class="tdot green"></span>
+          </div>
+          <span class="terminal-title"><i class="fa-solid fa-terminal"></i> interactive-terminal</span>
+        </div>
+        <div class="terminal-body" id="termBody">
+          <p class="term-line"><span class="term-out">Welcome to AlaEddine's terminal! Type <span class="term-cmd">"help"</span> to get started.</span></p>
+        </div>
+        <div class="terminal-input-row">
+          <span class="term-prompt">&#62;</span>
+          <input class="terminal-input" id="termInput" type="text" placeholder="Type a command..." autocomplete="off" spellcheck="false">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="contact-avail fade-in">
+      <span class="section-label">// Work Preferences</span>
+      <div class="avail-grid">
+        <div class="avail-card">
+          <div class="avail-val">Now</div>
+          <div class="avail-label">Availability</div>
+        </div>
+        <div class="avail-card">
+          <div class="avail-val">Remote</div>
+          <div class="avail-label">Work Type</div>
+        </div>
+        <div class="avail-card">
+          <div class="avail-val">Flexible</div>
+          <div class="avail-label">Commitment</div>
+        </div>
+        <div class="avail-card">
+          <div class="avail-val">Full-Time</div>
+          <div class="avail-label">Job Preference</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <p>© 2025 <span>AlaEddine Derbel</span> — Designed &amp; Built with precision &nbsp;·&nbsp; Embedded Systems Engineer</p>
+</footer>
+
+<!-- ============ SCRIPTS ============ -->
+<script>
+  /* ---- LOADER ---- */
+  const loaderBar     = document.getElementById('loaderBar');
+  const loaderPercent = document.getElementById('loaderPercent');
+  const loaderStatus  = document.getElementById('loaderStatus');
+  const loader        = document.getElementById('loader');
+
+  const steps = [
+    { at: 15,  label: 'Initializing hardware...' },
+    { at: 35,  label: 'Loading software...' },
+    { at: 55,  label: 'Flashing firmware...' },
+    { at: 72,  label: 'Configuring peripherals...' },
+    { at: 88,  label: 'Starting system...' },
+    { at: 100, label: 'System ready.' },
+  ];
+
+  let current = 0;
+  let stepIdx = 0;
+
+  const interval = setInterval(() => {
+    current += Math.random() * 3 + 1;
+    if (current >= 100) current = 100;
+    loaderBar.style.width = current + '%';
+    loaderPercent.textContent = Math.floor(current) + '%';
+    if (stepIdx < steps.length && current >= steps[stepIdx].at) {
+      loaderStatus.textContent = steps[stepIdx].label;
+      stepIdx++;
+    }
+    if (current >= 100) {
+      clearInterval(interval);
+      setTimeout(() => {
+        loader.classList.add('loader-out');
+        setTimeout(() => { loader.style.display = 'none'; }, 700);
+      }, 400);
+    }
+  }, 30);
+
+  /* ---- CV DROPDOWN ---- */
+  function toggleCvDropdown(e) {
+    e.stopPropagation();
+    const drop = document.getElementById('cvDropdown');
+    const chev = document.getElementById('cvChevron');
+    const open = drop.classList.toggle('open');
+    chev.style.transform = open ? 'rotate(180deg)' : 'rotate(0deg)';
+  }
+
+  document.addEventListener('click', () => {
+    const drop = document.getElementById('cvDropdown');
+    const chev = document.getElementById('cvChevron');
+    if (drop.classList.contains('open')) {
+      drop.classList.remove('open');
+      chev.style.transform = 'rotate(0deg)';
+    }
+  });
+
+  /* ---- NAV ---- */
+  function toggleMenu() {
+    const m = document.getElementById('mobileMenu');
+    const b = document.getElementById('hamBtn');
+    m.classList.toggle('open');
+    b.innerHTML = m.classList.contains('open')
+      ? '<i class="fa-solid fa-xmark"></i>'
+      : '<i class="fa-solid fa-bars"></i>';
+  }
+
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('hamBtn').innerHTML = '<i class="fa-solid fa-bars"></i>';
+  }
+
+  /* ---- TYPEWRITER ---- */
+  const roles = ['Embedded Systems Engineer', 'Firmware Developer', 'Embedded Linux Developer', 'IoT Solutions Builder'];
+  let ri = 0, ci = 0, deleting = false;
+  const tw = document.getElementById('typewriter');
+
+  function type() {
+    const word = roles[ri];
+    if (!deleting) {
+      tw.textContent = word.substring(0, ci + 1);
+      ci++;
+      if (ci === word.length) { deleting = true; setTimeout(type, 1800); return; }
+    } else {
+      tw.textContent = word.substring(0, ci - 1);
+      ci--;
+      if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
+    }
+    setTimeout(type, deleting ? 60 : 100);
+  }
+  type();
+
+  /* ---- TERMINAL ---- */
+  const termInput = document.getElementById('termInput');
+  const termBody  = document.getElementById('termBody');
+
+  const commands = {
+    help:     `Available commands:\n  <span class="term-cmd">about</span>      — Who am I\n  <span class="term-cmd">skills</span>     — Technical skills\n  <span class="term-cmd">contact</span>    — How to reach me\n  <span class="term-cmd">projects</span>   — My projects\n  <span class="term-cmd">status</span>     — Current availability\n  <span class="term-cmd">clear</span>      — Clear terminal`,
+    about:    `AlaEddine Derbel — Embedded Systems Engineer\nLocation : Sousse, Tunisia\nDegree   : Industrial Electronics Engineering, ENISo 2025\nFocus    : Firmware · RTOS · Embedded Linux · IoT`,
+    skills:   `Languages  : C / C++ / Python\nMCUs       : STM32 · ESP32 · PIC18F\nOS         : FreeRTOS · Embedded Linux\nProtocols  : UART · I2C · SPI · CAN · MQTT\nTools      : STM32CubeIDE · VS Code · Git · ROS2`,
+    contact:  `Email    : derbel176@gmail.com\nLinkedIn : linkedin.com/in/ala-eddine-derbel-a78624273\nGitHub   : github.com/Alaeddinederbel`,
+    projects: `[01] CAN Dashboard — STM32F429 Multi-ECU System\n[02] OTA Firmware Update — ESP32 + ESP8266\n[03] ESP32-CAM Person Detection & Tracking\n[04] Secure Digital Lock System — PIC18F`,
+    status:   `<span style="color:var(--cyan)">● ONLINE</span>  —  Available for full-time opportunities\nTimezone : UTC+1 (Sousse, Tunisia)\nPrefers  : Remote · Flexible · Full-Time`,
+    clear:    '__CLEAR__',
+  };
+
+  function termPrint(html) {
+    const line = document.createElement('p');
+    line.className = 'term-line';
+    line.innerHTML = `<span class="term-out">${html.replace(/\n/g, '<br>')}</span>`;
+    termBody.appendChild(line);
+    termBody.scrollTop = termBody.scrollHeight;
+  }
+
+  function termEcho(cmd) {
+    const line = document.createElement('p');
+    line.className = 'term-line';
+    line.innerHTML = `<span class="term-prompt-echo">&#62;</span> <span class="term-echo">${cmd}</span>`;
+    termBody.appendChild(line);
+  }
+
+  termInput.addEventListener('keydown', function(e) {
+    if (e.key !== 'Enter') return;
+    const raw = termInput.value.trim().toLowerCase();
+    termInput.value = '';
+    if (!raw) return;
+    termEcho(raw);
+    if (raw === 'clear') { termBody.innerHTML = ''; return; }
+    const out = commands[raw];
+    if (out) {
+      termPrint(out);
+    } else {
+      termPrint(`<span style="color:#e05a5a">bash: ${raw}: command not found. Type <span class="term-cmd">help</span> for available commands.</span>`);
+    }
+  });
+
+  /* ---- SCROLL FADE-IN ---- */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
